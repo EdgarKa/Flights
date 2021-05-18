@@ -1,21 +1,21 @@
-INSERT INTO flights (code, departure, arrival) VALUES
-('BD674', 'Spain', 'United Kingdom'),
-('BA1326', 'Germany', 'Italy'),
-('BA1476', 'Lithuania', 'Greece'),
-('GF5232', 'Norway', 'Russia'),
-('AA8025', 'Czech Republic', 'Sweden'),
-('AA7991', 'United Kingdom', 'Poland'),
-('AA8017', 'Turkey', 'Germany'),
-('BA1442', 'Greece', 'Russia'),
-('BA1388', 'Portugal', 'Latvia');
+INSERT INTO flights (code, departure, arrival, dep_date, dep_time, arr_date, arr_time, assigned_to) VALUES
+('BD674', 'Spain', 'United Kingdom', '2021-01-01', '12:00:00', '2021-01-02', '12:00:00', null),
+('BA1326', 'Germany', 'Italy', '2021-01-01', '12:00:00', '2021-01-01', '12:00:00', null),
+('BA1476', 'Lithuania', 'Greece', '2021-01-01', '12:00:00', '2021-01-01', '12:00:00', null),
+('GF5232', 'Norway', 'Russia', '2021-01-01', '12:00:00', '2021-01-01', '12:00:00', null),
+('AA8025', 'Czech Republic', 'Sweden', '2021-01-01', '12:00:00', '2021-01-01', '12:00:00', null),
+('AA7991', 'United Kingdom', 'Poland', '2021-01-01', '12:00:00', '2021-01-01', '12:00:00', null),
+('AA8017', 'Turkey', 'Germany', '2021-01-01', '12:00:00', '2021-01-01', '12:00:00', null),
+('BA1442', 'Greece', 'Russia', '2021-01-01', '12:00:00', '2021-01-01', '12:00:00', 'pilot_jane'),
+('BA1388', 'Portugal', 'Latvia', '2021-01-01', '12:00:00', '2021-01-01', '12:00:00', null);
 
 -- USER
 -- hashed password: letmein
-INSERT INTO security_user (id, username, password, first_name, last_name) VALUES
-(1,  'admin', '$2a$12$ZhGS.zcWt1gnZ9xRNp7inOvo5hIT0ngN7N.pN939cShxKvaQYHnnu', 'Administrator', 'Adminstrator'),
-(2,  'pilot_jane', '$2a$12$ZhGS.zcWt1gnZ9xRNp7inOvo5hIT0ngN7N.pN939cShxKvaQYHnnu', 'Jane', 'Doe'),
-(3,  'pilot_mark', '$2a$12$ZhGS.zcWt1gnZ9xRNp7inOvo5hIT0ngN7N.pN939cShxKvaQYHnnu', 'Mark', 'Smith'),
-(4,  'wally', '$2a$12$ZhGS.zcWt1gnZ9xRNp7inOvo5hIT0ngN7N.pN939cShxKvaQYHnnu', 'Walter', 'Adams');
+INSERT INTO security_user (id, username, password, first_name, last_name, country) VALUES
+(1,  'admin', '$2a$12$ZhGS.zcWt1gnZ9xRNp7inOvo5hIT0ngN7N.pN939cShxKvaQYHnnu', 'Administrator', 'Adminstrator', null ),
+(2,  'pilot_jane', '$2a$12$ZhGS.zcWt1gnZ9xRNp7inOvo5hIT0ngN7N.pN939cShxKvaQYHnnu', 'Jane', 'Doe', 'Spain'),
+(3,  'pilot_mark', '$2a$12$ZhGS.zcWt1gnZ9xRNp7inOvo5hIT0ngN7N.pN939cShxKvaQYHnnu', 'Mark', 'Smith', 'Germany'),
+(4,  'wally', '$2a$12$ZhGS.zcWt1gnZ9xRNp7inOvo5hIT0ngN7N.pN939cShxKvaQYHnnu', 'Walter', 'Adams', 'Lithuania');
 
 -- ROLES
 

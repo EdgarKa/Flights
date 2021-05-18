@@ -13,6 +13,8 @@ public class LoginDto {
 
     private String lastName;
 
+    private String country;
+
     public LoginDto() {
     }
 
@@ -21,10 +23,12 @@ public class LoginDto {
         this.password = password;
     }
 
-    public LoginDto(String username, String password, String firstName, String lastName) {
-        this(username, password);
+    public LoginDto(@NotNull String username, @NotNull String password, String firstName, String lastName, String country) {
+        this.username = username;
+        this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.country = country;
     }
 
     public String getUsername() {
@@ -57,5 +61,13 @@ public class LoginDto {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 }

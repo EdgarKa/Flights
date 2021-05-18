@@ -14,12 +14,13 @@ public class User {
     @Column(name = "id")
     private Long id;
 
-    public User(String username, String password, Role role, String firstName, String lastName) {
+    public User(String username, String password, Role role, String firstName, String lastName, String country) {
         this.username = username;
         this.password = password;
         this.roles = Arrays.asList(role);
         this.firstName = firstName;
         this.lastName = lastName;
+        this.country = country;
     }
 
     @Column(name = "username")
@@ -34,6 +35,9 @@ public class User {
 
     @Column(name = "last_name")
     private String lastName;
+
+    @Column(name = "country")
+    private String country;
 
     public User() {
     }
@@ -88,6 +92,14 @@ public class User {
 
     public List<Role> getRoles() {
         return roles;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public void setRoles(List<Role> roles) {

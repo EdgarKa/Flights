@@ -2,6 +2,7 @@ package com.example.flights.service;
 
 import com.example.flights.domain.Role;
 import com.example.flights.domain.User;
+import com.example.flights.exceptions.AppException;
 import com.example.flights.repo.RoleRepository;
 import com.example.flights.repo.UserRepository;
 import com.example.flights.security.JwtProvider;
@@ -15,6 +16,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.security.auth.message.AuthException;
 import java.util.List;
 import java.util.Optional;
 
@@ -72,7 +74,7 @@ public class UserService {
      * @param lastName last name
      * @return Optional of user, empty if the user already exists.
      */
-    public Optional<User> signup(String username, String password, String firstName, String lastName) {
+    public Optional<User> signup(String username, String password, String firstName, String lastName, String country) {
         Optional<User> user = Optional.empty();
         if (!userRepository.findByUsername(username).isPresent()) {
             Optional<Role> role = roleRepository.findByRoleName("ROLE_PILOT");
@@ -80,7 +82,8 @@ public class UserService {
                             passwordEncoder.encode(password),
                             role.get(),
                             firstName,
-                            lastName)));
+                            lastName,
+                            country)));
         }
         return user;
     }

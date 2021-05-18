@@ -33,7 +33,7 @@ public class UserController {
     @ResponseStatus(HttpStatus.CREATED)
     public User signup(@RequestBody @Valid LoginDto loginDto){
         return userService.signup(loginDto.getUsername(), loginDto.getPassword(), loginDto.getFirstName(),
-                loginDto.getLastName()).orElseThrow(() -> new HttpServerErrorException(HttpStatus.BAD_REQUEST, "User already exists"));
+                loginDto.getLastName(), loginDto.getCountry()).orElseThrow(() -> new HttpServerErrorException(HttpStatus.BAD_REQUEST, "User already exists"));
     }
 
     @GetMapping

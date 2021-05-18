@@ -10,7 +10,8 @@ CREATE TABLE security_user (
     username varchar(255) NOT NULL,
     password varchar(255) NOT NULL,
     first_name varchar(255) NOT NULL,
-    last_name varchar(255) NOT NULL
+    last_name varchar(255) NOT NULL,
+    country varchar(255)
 );
 
 
@@ -24,5 +25,10 @@ CREATE TABLE user_role (
 CREATE TABLE flights (
     code varchar(16) NOT NULL,
     departure varchar(255) NOT NULL,
-    arrival varchar(255) NOT NULL
+    arrival varchar(255) NOT NULL,
+    dep_date DATE,
+    dep_time TIME,
+    arr_date DATE,
+    arr_time TIME,
+    assigned_to varchar(255)
 );
